@@ -15,6 +15,7 @@ public class MyChatServerHandler extends SimpleChannelInboundHandler<String> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
         Channel channel = ctx.channel();
+        System.out.println("[转发] " + msg);
         channelGroup.forEach(ch -> {
             if (channel != ch) {
                 ch.writeAndFlush(channel.remoteAddress() + " ：" + msg + "\n");
@@ -39,7 +40,8 @@ public class MyChatServerHandler extends SimpleChannelInboundHandler<String> {
         channelGroup.writeAndFlush("【服务器】- " + channel.remoteAddress() + " 离开 \n");
         // 移除掉
         channelGroup.remove(channel);
-        System.out.println("------服务器 离开");
+        System.out.println("------服务器 离开 size =" + channelGroup.size());
+
     }
 
     @Override
