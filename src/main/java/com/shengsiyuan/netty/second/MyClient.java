@@ -14,7 +14,6 @@ public class MyClient {
             Bootstrap bootstrap = new Bootstrap();
             // handler 和 ChildHandler 的区别
             // 客户端只使用 handler
-            //
             bootstrap.group(eventLoopGroup).channel(NioSocketChannel.class).handler(new MyClientInitializer());
             ChannelFuture channelFuture = bootstrap.connect("localhost", 8899).sync();
             channelFuture.channel().closeFuture().sync();
