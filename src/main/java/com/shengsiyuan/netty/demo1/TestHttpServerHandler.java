@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.firsttest;
+package com.shengsiyuan.netty.demo1;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

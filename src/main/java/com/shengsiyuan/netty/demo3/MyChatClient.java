@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.third;
+package com.shengsiyuan.netty.demo3;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;

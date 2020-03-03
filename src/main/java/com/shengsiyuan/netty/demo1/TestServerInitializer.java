@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.firsttest;
+package com.shengsiyuan.netty.demo1;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
