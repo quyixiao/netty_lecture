@@ -15,9 +15,12 @@ public class WebSocketChannelInitializer extends ChannelInitializer<SocketChanne
         ChannelPipeline pipeline = ch.pipeline();
         pipeline.addLast(new HttpServerCodec());
         pipeline.addLast(new ChunkedWriteHandler());
-        //  分成10个段，
+        //  分成10个段， 将10个段放在一起，聚合成一个完整的数据
         pipeline.addLast(new HttpObjectAggregator(8192));
+        // ws://localhost:9999/ws
         pipeline.addLast(new WebSocketServerProtocolHandler("/ws"));
+
+        pipeline.addLast(new TextWebSocketFrameHandler());
     }
 
 
