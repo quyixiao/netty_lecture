@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.demo3;
+package com.shengsiyuan.netty.demo2_product_consumer;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -6,7 +6,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
-public class MyChatServer {
+public class MyServer {
 
 
     public static void main(String[] args) {
@@ -15,8 +15,8 @@ public class MyChatServer {
 
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
-            serverBootstrap.group(bossGroup, workerGroup).channel(NioServerSocketChannel.class)
-                    .childHandler(new MyChatServerInitializer());
+            serverBootstrap.group(bossGroup,workerGroup).channel(NioServerSocketChannel.class)
+                .childHandler(new MyServerInitializer());
 
             ChannelFuture channelFuture = serverBootstrap.bind(8899).sync();
             channelFuture.channel().closeFuture().sync();

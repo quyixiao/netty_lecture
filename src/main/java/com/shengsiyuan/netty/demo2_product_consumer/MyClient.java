@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.demo2;
+package com.shengsiyuan.netty.demo2_product_consumer;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

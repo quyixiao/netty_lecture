@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.demo3;
+package com.shengsiyuan.netty.demo3_chat;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;

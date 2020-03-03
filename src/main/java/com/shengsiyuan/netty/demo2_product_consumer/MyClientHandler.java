@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.demo2;
+package com.shengsiyuan.netty.demo2_product_consumer;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
