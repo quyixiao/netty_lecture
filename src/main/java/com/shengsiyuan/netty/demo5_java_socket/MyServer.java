@@ -9,7 +9,15 @@ import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 
 import java.net.InetSocketAddress;
-
+// rmi:remote method invocation
+// client:
+// server:
+//  序列化与反序列化 也叫做 ：编码与解码
+// RPC :remote Procedure Call ， 远程过程调用,很多的 RPC 框架是跨语言的
+// 1.定义一个接口说明文件（idl）:描述了对象，（结构体），对象成员，接口方法等一系列的信息
+// 2. 通过 RPC 框架所提供的编译器将接口说明文件编译成具体语言文件
+// 3. 在客户端与服务端分别引入 RPC编译器所生成的文件，即可像调用本地方法一样的被调用
+//
 public class MyServer {
 
     public static void main(String[] args) throws Exception {
