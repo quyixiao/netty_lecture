@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.demo5;
+package com.shengsiyuan.netty.demo5_java_socket;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

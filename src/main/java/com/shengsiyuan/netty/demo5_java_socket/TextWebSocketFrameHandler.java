@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.demo5;
+package com.shengsiyuan.netty.demo5_java_socket;
 
 
 import io.netty.channel.ChannelHandlerContext;
@@ -12,7 +12,7 @@ public class TextWebSocketFrameHandler extends SimpleChannelInboundHandler<TextW
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) throws Exception {
         System.out.println("收到消息： " + msg.text());
-
+        // 需要传递一个TextWebSocketFrame
         ctx.channel().writeAndFlush(new TextWebSocketFrame("服务器时间： " + LocalDateTime.now()));
     }
 

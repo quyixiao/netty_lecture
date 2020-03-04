@@ -1,4 +1,4 @@
-package com.shengsiyuan.netty.demo5;
+package com.shengsiyuan.netty.demo5_java_socket;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
