@@ -9,7 +9,13 @@ import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 
-
+//Spring MVC
+// Struts2
+// @GetMapping (... = "/users/user/1233")
+// PostMapping(... = "/users/user/")
+// DispatcherServlet
+// 控制器
+// Netting 一定是在网络的底层里面，没有像其他的框架一样，在网络的顶层
 public class TestServerInitializer extends ChannelInitializer<SocketChannel> {
 
     @Override
