@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package com.shengsiyuan.protobuf;
+
+option optimize_for = SPEED;
+option java_package = "com.shengsiyuan.netty.demo6_protobuf";
+option java_outer_classname = "DataInfo";
+
+// protoc --java_out=src/main/java src/protobuf/Student.proto  生成
+
+message Student {
+    required string name = 1;
+    optional int32 age = 2;
+    optional string address = 3;
+}
+
+
+
