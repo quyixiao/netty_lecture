@@ -6,6 +6,7 @@ import io.grpc.ServerBuilder;
 
 import java.io.IOException;
 
+// gradle generateProto
 public class GrpcServer {
 
     private Server server;
@@ -22,13 +23,13 @@ public class GrpcServer {
     }
 
     private void stop() {
-        if(null != this.server) {
+        if (null != this.server) {
             this.server.shutdown();
         }
     }
 
     private void awaitTermination() throws InterruptedException {
-        if(null != this.server) {
+        if (null != this.server) {
             this.server.awaitTermination();
         }
     }
