@@ -8,13 +8,17 @@ option java_multiple_files = true;
 
 service StudentService {
 
-    rpc GetRealNameByUsername(MyRequest) returns (MyResponse) {}
+    rpc GetRealNameByUsername (MyRequest) returns (MyResponse) {
+    }
 
-    rpc GetStudentsByAge(StudentRequest) returns (stream StudentResponse) {}
+    rpc GetStudentsByAge (StudentRequest) returns (stream StudentResponse) {
+    }
 
-    rpc GetStudentsWrapperByAges(stream StudentRequest) returns (StudentResponseList) {}
+    rpc GetStudentsWrapperByAges (stream StudentRequest) returns (StudentResponseList) {
+    }
 
-    rpc BiTalk(stream StreamRequest) returns (stream StreamResponse) {}
+    rpc BiTalk (stream StreamRequest) returns (stream StreamResponse) {
+    }
 
 }
 
