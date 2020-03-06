@@ -1,4 +1,4 @@
-package com.shengsiyuan.grpc;
+package com.shengsiyuan.netty.demo8_grpc;
 
 
 import io.grpc.Server;
