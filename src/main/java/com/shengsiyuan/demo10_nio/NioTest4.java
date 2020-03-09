@@ -31,6 +31,7 @@ public class NioTest4 {
             buffer.flip();
 
             outputChannel.write(buffer);
+
         }
 
         inputChannel.close();
