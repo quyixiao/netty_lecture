@@ -37,10 +37,14 @@ public class NioServer {
                     final SocketChannel client;
 
                     try {
+                        //服务器监听到了一个客户端连接
                         if (selectionKey.isAcceptable()) {
                             ServerSocketChannel server = (ServerSocketChannel) selectionKey.channel();
+                            // 服务器会为每个新的客户端连接创建一个 SocketChannel
                             client = server.accept();
+                            //配置为 非阻塞 模式
                             client.configureBlocking(false);
+                            // 这个新连接主要用于从客户端读取数据
                             client.register(selector, SelectionKey.OP_READ);
 
                             String key = "【" + UUID.randomUUID().toString() + "】";
@@ -85,7 +89,7 @@ public class NioServer {
                         ex.printStackTrace();
                     }
                 });
-
+                // 每一次处理完成以后，一定要将东西从集合中删除掉
                 selectionKeys.clear();
             } catch (Exception ex) {
                 ex.printStackTrace();
