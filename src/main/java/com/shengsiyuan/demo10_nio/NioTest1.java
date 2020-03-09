@@ -13,8 +13,8 @@ import java.security.SecureRandom;
 // Channel 指的是可以向其写入数据或者是从读取数据结构对象，它类似于 java.io 中的 stream
 // 所有的数据读写都是通过 buffer 来进行的，永远都不会出现直接 channerl 写入数据的情况，或者直接从 Channel 读取数据情况
 // 与 Stream 不同的是，Channel 是双向的，一个流只可能是 InputStream 或者是 OutputStream ,Channel 打开则可以读取，写入或者是就读写
-//  由于 Channel 是双向的，因此它能更加好的反映出底层操作的真实情况，在 Linux,底层操作系统是通道是双向的，
-//
+//  由于 Channel 是双向的，因此它能更加好的反映出底层操作的真实情况，在 Linux,底层操作系统是通道是双向的。
+// 关于 NIO Buffer 中的3个重要的状态属性的含义，position ,limit 与 capacity
 
 public class NioTest1 {
 

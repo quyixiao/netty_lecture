@@ -8,7 +8,8 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 public class NioTest4 {
-
+    // 理解原理性的东西，是没有问题的，在工作还是
+    //
     public static void main(String[] args) {
         try {
             FileInputStream inputStream = new FileInputStream("/Users/quyixiao/project/netty_lecture/src/input.txt");
@@ -27,11 +28,8 @@ public class NioTest4 {
                 if (-1 == read) {
 
                     break;
-
                 }
-
                 buffer.flip();
-
                 outputChannel.write(buffer);
             }
             inputChannel.close();
