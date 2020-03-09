@@ -14,6 +14,8 @@ public class NioTest8 {
 
         FileChannel inputChannel = inputStream.getChannel();
         FileChannel outputChannel = outputStream.getChannel();
+
+
         ByteBuffer buffer = ByteBuffer.allocateDirect(512);
         while (true) {
             buffer.clear();
