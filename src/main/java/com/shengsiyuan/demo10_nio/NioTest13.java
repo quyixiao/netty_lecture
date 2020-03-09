@@ -12,44 +12,48 @@ import java.nio.charset.CharsetEncoder;
 
 public class NioTest13 {
 
-    public static void main(String[] args) throws Exception{
-        String inputFile = "NioTest13_In.txt";
-        String outputFile = "NioTest13_Out.txt";
+    public static void main(String[] args) {
+        try{
+            String inputFile = "/Users/quyixiao/project/netty_lecture/src/NioTest13_In.txt";
+            String outputFile = "/Users/quyixiao/project/netty_lecture/src/NioTest13_Out.txt";
 
-        RandomAccessFile inputRandomAccessFile = new RandomAccessFile(inputFile, "r");
-        RandomAccessFile outputRandomAccessFile = new RandomAccessFile(outputFile, "rw");
+            RandomAccessFile inputRandomAccessFile = new RandomAccessFile(inputFile, "r");
+            RandomAccessFile outputRandomAccessFile = new RandomAccessFile(outputFile, "rw");
 
-        long inputLength = new File(inputFile).length();
+            long inputLength = new File(inputFile).length();
 
-        FileChannel inputFileChannel = inputRandomAccessFile.getChannel();
-        FileChannel outputFileChannel = outputRandomAccessFile.getChannel();
+            FileChannel inputFileChannel = inputRandomAccessFile.getChannel();
+            FileChannel outputFileChannel = outputRandomAccessFile.getChannel();
 
-        MappedByteBuffer inputData = inputFileChannel.map(FileChannel.MapMode.READ_ONLY, 0, inputLength);
+            MappedByteBuffer inputData = inputFileChannel.map(FileChannel.MapMode.READ_ONLY, 0, inputLength);
 
-        System.out.println("=============");
+            System.out.println("=============");
 
-        Charset.availableCharsets().forEach((k, v) -> {
-            System.out.println(k + ", " + v);
-        });
+            Charset.availableCharsets().forEach((k, v) -> {
+                System.out.println(k + ", " + v);
+            });
 
-        System.out.println("=============");
+            System.out.println("=============");
 
-        Charset charset = Charset.forName("iso-8859-1");
-        CharsetDecoder decoder = charset.newDecoder();
-        CharsetEncoder encoder = charset.newEncoder();
+            Charset charset = Charset.forName("iso-8859-1");
+            CharsetDecoder decoder = charset.newDecoder();
+            CharsetEncoder encoder = charset.newEncoder();
 
-        CharBuffer charBuffer = decoder.decode(inputData);
+            CharBuffer charBuffer = decoder.decode(inputData);
 
-//        System.out.println(charBuffer.get(12));
+        System.out.println(charBuffer.get(12));
 
-        ByteBuffer outputData = encoder.encode(charBuffer);
+            ByteBuffer outputData = encoder.encode(charBuffer);
 
-//        ByteBuffer outputData = Charset.forName("utf-8").encode(charBuffer);
+       //ByteBuffer outputData = Charset.forName("utf-8").encode(charBuffer);
 
-        outputFileChannel.write(outputData);
+            outputFileChannel.write(outputData);
 
-        inputRandomAccessFile.close();
-        outputRandomAccessFile.close();
+            inputRandomAccessFile.close();
+            outputRandomAccessFile.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 }
