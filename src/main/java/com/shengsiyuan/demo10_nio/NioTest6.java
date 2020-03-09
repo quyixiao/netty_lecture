@@ -16,6 +16,7 @@ public class NioTest6 {
         // 由图能够看出，当操作数据量非常小时，两种分配方式操作使用时间基本是同样的，第一种方式有时可能会更快，可是当数据量非常大时，另外一种
         // 方式会远远大于第一种的分配方式。
         ByteBuffer buffer = ByteBuffer.allocate(10);
+        System.out.println("-----------------" + buffer.capacity());
 
         for (int i = 0; i < buffer.capacity(); ++i) {
             buffer.put((byte) i);
@@ -25,6 +26,7 @@ public class NioTest6 {
         buffer.limit(6);
 
         ByteBuffer sliceBuffer = buffer.slice();
+        System.out.println("++++++++++++++++++" +  sliceBuffer.capacity());
 
         for (int i = 0; i < sliceBuffer.capacity(); ++i) {
             byte b = sliceBuffer.get(i);
