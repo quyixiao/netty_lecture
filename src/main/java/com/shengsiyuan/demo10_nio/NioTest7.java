@@ -24,7 +24,8 @@ public class NioTest7 {
         System.out.println(readonlyBuffer.getClass());
 
         readonlyBuffer.position(0);
-
+        // 只读 buffer 异常
 //        readonlyBuffer.put((byte)2);
+
     }
 }
