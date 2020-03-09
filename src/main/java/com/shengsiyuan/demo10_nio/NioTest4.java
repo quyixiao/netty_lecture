@@ -3,38 +3,44 @@ package com.shengsiyuan.demo10_nio;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 public class NioTest4 {
 
-    public static void main(String[] args) throws Exception {
-        FileInputStream inputStream = new FileInputStream("input.txt");
-        FileOutputStream outputStream = new FileOutputStream("output.txt");
+    public static void main(String[] args) {
+        try {
+            FileInputStream inputStream = new FileInputStream("/Users/quyixiao/project/netty_lecture/src/input.txt");
+            FileOutputStream outputStream = new FileOutputStream("/Users/quyixiao/project/netty_lecture/src/output.txt");
 
-        FileChannel inputChannel = inputStream.getChannel();
-        FileChannel outputChannel = outputStream.getChannel();
+            FileChannel inputChannel = inputStream.getChannel();
+            FileChannel outputChannel = outputStream.getChannel();
+            ByteBuffer buffer = ByteBuffer.allocate(512);
+            while (true) {
+                //            buffer.clear(); // 如果注释掉该行代码会发生什么情况？
 
-        ByteBuffer buffer = ByteBuffer.allocate(512);
+                int read = inputChannel.read(buffer);
 
-        while(true) {
-//            buffer.clear(); // 如果注释掉该行代码会发生什么情况？
+                System.out.println("read: " + read);
 
-            int read = inputChannel.read(buffer);
+                if (-1 == read) {
 
-            System.out.println("read: " + read);
+                    break;
 
-            if(-1 == read) {
-                break;
+                }
+
+                buffer.flip();
+
+                outputChannel.write(buffer);
             }
+            inputChannel.close();
+            outputChannel.close();
 
-            buffer.flip();
 
-            outputChannel.write(buffer);
 
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        inputChannel.close();
-        outputChannel.close();
     }
 }
