@@ -17,6 +17,9 @@ public class NewIOServer {
         serverSocket.setReuseAddress(true);
         serverSocket.bind(address);
         // 分配10字节大小内存空间
+        // 为了从FileChannel读取数据，你需要调用其read()方法。如下：
+        // 首先分配一个Buffer，从FileChannel读取的数据将被读入Buffer。
+        //
         ByteBuffer byteBuffer = ByteBuffer.allocate(4096);
 
         while (true) {
@@ -28,6 +31,8 @@ public class NewIOServer {
 
             while (-1 != readCount) {
                 try {
+                    //然后调用FileChannel.read()方法。这个方法将数据从FileChannel读入Buffer。
+                    // read()方法返回的int代表着有多少数据被读入了Buffer。如果返回-1，代表着已经读到文件结尾。
                     readCount = socketChannel.read(byteBuffer);
                     System.out.println(readCount);
                 } catch (Exception ex) {
