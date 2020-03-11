@@ -43,6 +43,7 @@ public class NioTest11 {
                }
 
                Arrays.asList(buffers).forEach(buffer -> {
+                   //将当前位置设置为EOF,指针移动到下标0即位置1
                    buffer.flip();
                });
 
