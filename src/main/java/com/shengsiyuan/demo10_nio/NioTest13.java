@@ -12,7 +12,11 @@ import java.nio.charset.CharsetEncoder;
 
 public class NioTest13 {
     // 将一个字符串，在磁盘上，目标，磁盘存储到我们，字符总是字节一种编码方式，一个字节是一个 byte
-    //
+    // unicode ,采用了两个字节来表示一个字符
+    // UTF,Unicode ，Translation ,Format
+    // Unicode 是一种编码方式，而 UTF 则是一种存储方式，UTF-8是 Unicode 的实现方式之一
+    // UTF-16LE(littele endian) UTF16-BE (big endian)
+    //  如果不可以的放，那就
     public static void main(String[] args) {
         try {
             String inputFile = "/Users/quyixiao/project/netty_lecture/src/NioTest13_In.txt";
@@ -30,6 +34,7 @@ public class NioTest13 {
 
             System.out.println("=============");
             // 系统中所有的可用的字符集合
+
             Charset.availableCharsets().forEach((k, v) -> {
                 System.out.println(k + ", " + v);
             });
