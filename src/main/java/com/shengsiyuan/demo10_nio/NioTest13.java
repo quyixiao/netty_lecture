@@ -16,7 +16,10 @@ public class NioTest13 {
     // UTF,Unicode ，Translation ,Format
     // Unicode 是一种编码方式，而 UTF 则是一种存储方式，UTF-8是 Unicode 的实现方式之一
     // UTF-16LE(littele endian) UTF16-BE (big endian)
-    //  如果不可以的放，那就
+    // 如果不可以的放，那就再看看代码就可以了，原理性的东西很快的回复起来的
+    // IdleStateHandler是用来做心跳检的，如何知道，两台机器他们之间的联接是怎样的
+    // 网络 ，如何去合理的知道这个问题
+    //
     public static void main(String[] args) {
         try {
             String inputFile = "/Users/quyixiao/project/netty_lecture/src/NioTest13_In.txt";
