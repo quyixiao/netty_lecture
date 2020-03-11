@@ -6,11 +6,12 @@ import java.io.InputStream;
 import java.net.Socket;
 
 public class OldIOClient {
-
+    //发送总字节数： 234593663, 耗时： 1414
+    // 发送总字节数：234593663，耗时： 636
     public static void main(String[] args) throws Exception {
         Socket socket = new Socket("localhost", 8899);
 
-        String fileName = "/Users/quyixiao/Desktop/react-mobx-starter-master.rar";
+        String fileName = "/Users/quyixiao/Desktop/92_精通并发与Netty课程总结与展望.mp4";
         InputStream inputStream = new FileInputStream(fileName);
 
         DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());

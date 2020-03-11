@@ -12,7 +12,7 @@ public class NewIOClient {
         socketChannel.connect(new InetSocketAddress("localhost", 8899));
         socketChannel.configureBlocking(true);
 
-        String fileName = "/Users/quyixiao/Desktop/react-mobx-starter-master.rar";
+        String fileName = "/Users/quyixiao/Desktop/92_精通并发与Netty课程总结与展望.mp4";
 
         FileChannel fileChannel = new FileInputStream(fileName).getChannel();
 
