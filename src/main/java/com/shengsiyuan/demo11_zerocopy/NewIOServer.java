@@ -8,9 +8,8 @@ import java.nio.channels.SocketChannel;
 
 public class NewIOServer {
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         InetSocketAddress address = new InetSocketAddress(8899);
-
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         ServerSocket serverSocket = serverSocketChannel.socket();
         //启动端口重用，这行代码一定要放到绑定端口前。
@@ -19,7 +18,6 @@ public class NewIOServer {
         // 分配10字节大小内存空间
         // 为了从FileChannel读取数据，你需要调用其read()方法。如下：
         // 首先分配一个Buffer，从FileChannel读取的数据将被读入Buffer。
-        //
         ByteBuffer byteBuffer = ByteBuffer.allocate(4096);
 
         while (true) {
