@@ -17,6 +17,10 @@ public class NewIOClient {
      * 但是FileChannel操作是阻塞的，并且没有非阻塞模式。
      */
     public static void main(String[] args) throws Exception {
+        // Reactor 模式的一个体现，
+        // 反应器模式
+        // Proactor 模式
+        // Netty 整体架构 是Reactor 模式的完整模式
 
 
 
